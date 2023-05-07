@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Translate Plugin",
+    "name_for_model": "translate",
+    "description_for_human": "Plugin for translating between languages.",
+    "description_for_model": "Plugin for translating between languages. Use this for any tasks requiring translation",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "https://oasst-translate-plugin-someone13574.vercel.app/openapi.json",
+        "has_user_authentication": false
+    },
+    "logo_url": "https://oasst-translate-plugin-someone13574.vercel.app/icon.png",
+    "contact_email": "your_email@example.com",
+    "legal_info_url": "https://example.com"
+}
