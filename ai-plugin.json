@@ -3,7 +3,7 @@
     "name_for_human": "Translate Plugin",
     "name_for_model": "translate",
     "description_for_human": "Plugin for translating between languages.",
-    "description_for_model": "Plugin for translating between languages. Use this for any tasks requiring translation",
+    "description_for_model": "Plugin for translating between languages. Text should only be translated once",
     "auth": {
         "type": "none"
     },

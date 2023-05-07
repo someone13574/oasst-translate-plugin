@@ -24,6 +24,7 @@ async def translate_text(src_text: str = Query(..., description="text to be tran
     try:
         translated_text = translators.translate_text(
             src_text, "google", src_lang, dst_lang, False)
+        formatted_text = f"The translated text is: {translated_text}\nThought: Now I know the final answer"
         return Response(content=translated_text, media_type="text/plain")
     except Exception as err:
         print(err)
