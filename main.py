@@ -20,12 +20,12 @@ app.add_middleware(
 
 
 @app.get("/translate-text", operation_id="translateText", summary="Translate text from one language to another")
-async def translate_text(src_text: str = Query(..., description="text to be translated"), src_lang: str = Query(..., description="language of text to be translated (can be 'auto')"), dst_lang: str = Query(..., description="language to translate text to")) -> Response:
+async def translate_text(src_text: str = Query(..., description="text to be translated"), src_lang: str = Query(..., description="language of text to be translated (i18n locale code or 'auto')"), dst_lang: str = Query(..., description="language to translate text to (i18n locale code)")) -> Response:
     try:
         translated_text = translators.translate_text(
             src_text, "google", src_lang, dst_lang, False)
-        formatted_text = f"The translated text is: {translated_text}\nThought: Now I know the final answer"
-        return Response(content=translated_text, media_type="text/plain")
+        formatted_text = f"The translated text is: {translated_text}\nThought: I now know the final answer"
+        return Response(content=formatted_text, media_type="text/plain")
     except Exception as err:
         print(err)
         error_message = f"Failed to translate with error: {err}. If this is due to the parameters which you supplied please correct them, if this error is outside of your control, please notify the user of the problem."
